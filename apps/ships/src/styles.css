@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,500&display=swap");
+
+.navbar {
+    background: rgb(0, 241, 246);
+    background: linear-gradient(
+        90deg,
+        rgba(0, 241, 246, 0.3706524846266631) 0%,
+        rgba(65, 200, 215, 0.25580654625131305) 23%,
+        rgba(0, 62, 134, 0.4770950616574755) 100%
+    );
+    font-family: "Poppins", sans-serif;
+    margin: 20px;
+    justify-content: space-between;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.navbar__title {
+    margin: 0;
+    padding:10px;
+    padding-left: 20px;
+}
+
+.navbar__about {
+    margin: 0;
+    margin-right: 50px;
+    font-size: 20px;
+}
