@@ -4,6 +4,7 @@ import { Starship } from '../api/entities/Starship';
 import StarwarsApi from '../api/StarwarsApi';
 import DetailModel from '../components/DetailModel';
 import Loading from '../components/Loading';
+import StarshipTable from '../components/StarshipTable';
 import { TableHead } from '../components/table/TableHead';
 
 export default function StarShips() {
@@ -42,46 +43,23 @@ export default function StarShips() {
     setShowModal(false);
   }
 
-  /* Styles */
-
-  const style_pages = {
-    fontFamily: "Arial",
-  };
-
-  const style_table = {
-    margin: "40px",
-
-  }
 
   return (
-    <div style={style_table}>
-      <Loading
-        loading={isLoading}
+    <div style={{ margin: "40px" }}>
+      
+      <Loading loading={isLoading}>
+        <StarshipTable
+          data={StarShips}
+          openModal={openModal}
         />
-      <table className="table table-sm">
-        <TableHead />
-        <tbody>
-          {
-            StarShips.map((starship) => {
-              return (
-                <><tr key={starship.id}>
-                  <td>{starship.name}</td>
-                  <td>{starship.passengers}</td>
-                  <td>{starship.crew}</td>
-                  <td><Button onClick={() => openModal(starship)}>Show</Button></td>
-                </tr>
-                </>
-              )
-            })
-          }
-        </tbody>
-      </table>
+      </Loading>
+
       <DetailModel
         starship={CurrentStarShip}
         showModal={ShowModal}
         closeModal={closeModal}
       />
-      <div style={style_pages}>
+      <div style={{ fontFamily: "Arial" }}>
         <h5>Page {Page}</h5>
         {Page !== 1 ? <Button style={{ marginRight: "8px" }} onClick={() => { setPage(Page - 1); }}>Prev</Button> : null}
         {Page < 4 ? <Button onClick={() => { setPage(Page + 1); }}>Next</Button> : null}

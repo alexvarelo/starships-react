@@ -8,7 +8,7 @@ export function App() {
     <>
       <div className="navbar">
         <h2 className="navbar__title">Wellcome to the Starship paradise!</h2>
-        <Button className='navbar__about'>About</Button>
+        {/* <Button className='navbar__about'>About</Button> */}
       </div>
       <StarShips></StarShips>
     </>
