@@ -10,6 +10,7 @@ export function App() {
         <h2 className="navbar__title">Wellcome to the Starship paradise!</h2>
         {/* <Button className='navbar__about'>About</Button> */}
       </div>
+      {/* Main component that loads the table with the API information*/}
       <StarShips></StarShips>
     </>
   );

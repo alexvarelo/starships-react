@@ -8,6 +8,7 @@ interface ListProps {
     openModal: (starship:Starship) => void;
 }
 
+//Given the starships data, renders the information in a bootstrap table
 export default function StarshipTable(props:ListProps) {
   return (
     <table className="table table-sm">

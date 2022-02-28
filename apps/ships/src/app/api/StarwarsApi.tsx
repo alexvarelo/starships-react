@@ -3,6 +3,7 @@ import { Starship } from './entities/Starship';
 import { v4 as uuidv4 } from 'uuid';
 
 
+// Loads the API information depending on the requested Page, and "parses" the data to the Starship object
 export default async function StarwarsApi(page: number): Promise<Starship[]> {
     const result = fetch("https://swapi.dev/api/starships/?page=" + page).
         then((response) =>response.json()).

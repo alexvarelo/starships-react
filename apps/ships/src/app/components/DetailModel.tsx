@@ -4,6 +4,7 @@ import { Button, Modal } from 'react-bootstrap';
 import { Starship } from '../api/entities/Starship';
 
 
+//Shows the modal if showModal is true with the information of the requested ship
 export default function DetailModel(props: { starship: any; showModal: boolean; closeModal: () => void; }) {
 
     return props.showModal ? (

@@ -9,11 +9,11 @@ import { TableHead } from '../components/table/TableHead';
 
 export default function StarShips() {
 
-  const [isLoading, setisLoading] = useState(false);
-  const [StarShips, setStarShips] = useState<Starship[]>([]);
-  const [CurrentStarShip, setCurrentStarShip] = useState<Starship>();
-  const [ShowModal, setShowModal] = useState(false);
-  const [Page, setPage] = useState(1);
+  const [isLoading, setisLoading] = useState(false); //For showing the spinner if it's loading
+  const [StarShips, setStarShips] = useState<Starship[]>([]); //Data from the requested page of the API
+  const [CurrentStarShip, setCurrentStarShip] = useState<Starship>(); //Current ship that will show in the modal
+  const [ShowModal, setShowModal] = useState(false); //Boolean that permits showing the modal with the state CurrentStarShip
+  const [Page, setPage] = useState(1); // Page to show in the page, if value updates it will render again the table
 
   // Retreives information from the given Api, and assigns it to the CurrentStarship state
   const loadingStarShips = () => {
@@ -46,7 +46,7 @@ export default function StarShips() {
 
   return (
     <div style={{ margin: "40px" }}>
-      
+
       <Loading loading={isLoading}>
         <StarshipTable
           data={StarShips}
